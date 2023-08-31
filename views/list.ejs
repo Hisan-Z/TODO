@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <title>To Do List</title>
+</head>
+
+<body>
+  <div class="box" id="heading">
+    <h1>
+      <%= listTitle %> List
+    </h1>
+  </div>
+
+
+
+  <div class="box">
+    <% for(i of newListItems){ %>
+      <form action="/delete" method="'post">
+        <div class="item">
+      <input type="checkbox" >
+      <p>
+        <%= i %>
+      </p>
+    </div>
+      </form>
+    
+    <% }%>
+
+    <form action="/" method="post">
+      <input type="text" name="newItem">
+      <button type="submit">+</button>
+    </form>
+
+  </div>
+
+</body>
+
+</html>
+
+
+
+
+
+<!-- % if(kindofday=="Saturday" || kindofday=="Sunday" ){ %
+    <h1 style="color: rgb(246, 179, 246)">
+        %= kindofday %> List
+    </h1>
+    % } else{ %>
+        <h1 style="color: rgb(179, 246, 235)">
+            %= kindofday %> List
+        </h1>
+        % }%> -->
